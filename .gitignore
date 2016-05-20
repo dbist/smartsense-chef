@@ -14,3 +14,6 @@ bin/*
 
 .kitchen/
 .kitchen.local.yml
+
+# SmartSense
+smartsense-hst_1.2.1-161_amd64.deb
