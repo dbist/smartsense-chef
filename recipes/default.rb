@@ -9,9 +9,9 @@ cookbook_file "/tmp/smartsense-hst_1.2.1-161_amd64.deb" do
    mode "0770"	
 end
 
-# dpkg_package "/tmp/smartsense-hst_1.2.1-161_amd64.deb" do
-#   source "smartsense-hst_1.2.1-161_amd64.deb"
-#   action :install	
-# end
+dpkg_package "/tmp/smartsense-hst_1.2.1-161_amd64.deb" do
+#  source "smartsense-hst_1.2.1-161_amd64.deb"
+  action :install	
+end
 
 
