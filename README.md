@@ -13,4 +13,4 @@ Add `smartsense` to your node's `run_list`.
 Testing
 =======
 
-A `.kitchen.yaml` file is provided. Run +kitchen converge+ to verify this cookbook.
+A `.kitchen.yaml` file is provided. Run `kitchen converge` to verify this cookbook.
