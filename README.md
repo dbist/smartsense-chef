@@ -9,6 +9,7 @@ TODO
 4. How do I choose which machine is hst server?
 5. Do I need gateway?
 6. Need SSL certificate
+7. Replace hard-coded smartsense*.deb file with URL of the local repo
 
 Requirements
 ============
