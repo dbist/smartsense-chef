@@ -1,5 +1,15 @@
 This cookbook installs and configures Hortonworks SmartSense standalone.
 
+TODO
+====
+
+1. Need to automate JDK install similar to chef-bach
+2. Need to create attribute list for hst setup and hst setup-agent
+3. How do I handle multiple machines?
+4. How do I choose which machine is hst server?
+5. Do I need gateway?
+6. Need SSL certificate
+
 Requirements
 ============
 
