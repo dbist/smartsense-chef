@@ -36,3 +36,6 @@ end
 
 package "python2.7" do
 end
+
+package "openjdk-7-jdk" do
+end
