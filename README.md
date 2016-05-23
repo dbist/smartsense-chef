@@ -11,6 +11,7 @@ TODO
 6. Need SSL certificate
 7. Replace hard-coded smartsense*.deb file with URL of the local repo, good for now as it does not require internet connection but for deployment, need to replace with remote_file
 8. Make recipes indempotant!
+9. Convert Account, SmartSense ID and email address to encrypted data bag?
 
 Requirements
 ============
