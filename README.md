@@ -5,6 +5,7 @@ TODO
 
 1. Need to automate JDK install similar to chef-bach, do it with Oracle JDK
 2. Figure out whether Chef has a way to run CLI commands with multiple arguments and/or run Chef's bash script and pass argument list to SED hst-server.ini. Only changes on HST server will take effect, also needs HST restart. OR maybe just use hst-server.ini template???
+---------
 3. How do I handle multiple machines? Chef Nodes 
 4. How do I choose which machine is hst server? Chef Roles
 5. Do I need a gateway?
