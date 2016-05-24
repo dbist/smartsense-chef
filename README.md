@@ -3,7 +3,7 @@ This cookbook installs and configures Hortonworks SmartSense standalone.
 TODO
 ====
 
-1. Need to automate JDK install similar to chef-bach, do it with Oracle JDK
+1. Use jdk cookbook https://github.com/agileorbit-cookbooks/java/blob/master/.kitchen.yml
 2. Use template file for hst-server.ini
 3. Separate cookbook for hst and hst agent 
 5. Do I need a gateway?
