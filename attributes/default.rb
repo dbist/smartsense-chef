@@ -7,6 +7,7 @@ default['smartsense-chef']['certificate'] = 'n'
 default['smartsense-chef']['java_home'] = '/usr/lib/jvm/java-8-oracle-amd64'
 default['smartsense-chef']['cluster_name'] = 'samplecluster'
 default['smartsense-chef']['secured'] = 'n'
+default['smartsense-chef']['deploy_to'] = '/etc/hst/conf/'
 
 # Override defaults for the Java cookbook
 default['java']['jdk_version'] = 8

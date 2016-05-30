@@ -41,7 +41,7 @@ encryption.file.size.buffer=1536
 
 
 [java]
-home=<% node['smartsense-chef']['java_home'] %>
+home=<%= node['smartsense-chef']['java_home'] %>
 
 [webapp]
 dir=/usr/hdp/share/hst/hst-server/web
@@ -66,7 +66,7 @@ http.session.inactive_timeout=1800
 tmp.dir=/var/lib/smartsense/hst-server/tmp
 
 ;Web UI Port
-port=9000
+port=<%= node['smartsense-chef']['port'] %>
 
 ; Storage directory for saving bundles. Typical value is '/var/lib/smartsense/hst-server/data'.
 ; Make sure this directory has enough free space (as indicated by server.min_required_storage)
@@ -106,20 +106,20 @@ alert.progress.timeout.percent=0.6
 
 [cluster]
 ; Cluster name
-name=<% node['smartsense-chef']['cluster_name'] %>
+name=<%= node['smartsense-chef']['cluster_name'] %>
 ; Flag to indicate that the HDP cluster is secured or not
 secured=false
 
 [customer]
 ; Customer information
 ; The name of your Organization as it is registered with Hortonworks Support.
-account.name=<% node['smartsense-chef']['account'] %>
+account.name=<%= node['smartsense-chef']['account'] %>
 
 ;Email address used to send bundle upload, and recommendation availability notifications.
-notification.email=<% node['smartsense-chef']['email'] %>
+notification.email=<%= node['smartsense-chef']['email'] %>
 
 ; Your SmartSense ID is available from Hortonworks Support and uniquely identifies your account.
-smartsense.id=<% node['smartsense-chef']['id'] %>
+smartsense.id=<%= node['smartsense-chef']['id'] %>
 
 [gateway]
 ; When enabled, bundles are automatically sent to Hortonworks
