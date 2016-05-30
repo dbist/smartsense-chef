@@ -1,9 +1,11 @@
 require 'spec_helper'
 
 describe 'smartsense-chef::default' do
-  # Serverspec examples can be found at
-  # http://serverspec.org/resource_types.html
-  it 'does something' do
-    skip 'Replace this with meaningful tests'
+  it 'hst server is installed' do
+    expect(package 'smartsense-hst').to be_installed  
+  end
+
+  it 'responds on port "#{node[:smartsense-chef][:port]"' do
+    expect(port 9000).to be_listening 'tcp'
   end
 end
