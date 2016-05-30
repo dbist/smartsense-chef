@@ -3,7 +3,6 @@ This cookbook installs and configures Hortonworks SmartSense standalone.
 TODO
 ====
 
-1. Use jdk cookbook https://github.com/agileorbit-cookbooks/java/blob/master/.kitchen.yml
 2. Use template file for hst-server.ini
 3. Separate cookbook for hst and hst agent 
 4. Add Chef spec
@@ -18,6 +17,8 @@ Requirements
 ============
 
 Please see [latest documentation](http://docs.hortonworks.com/HDPDocuments/SS1/SmartSense-1.2.2/bk_smartsense_admin/content/os_requirements.html).
+
+Depends on https://github.com/agileorbit-cookbooks/java.git
 
 Usage
 =====
