@@ -4,17 +4,15 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
-bash "hst setup" do
-   user 'root'
-   code <<-EOH
-   "#{node['smartsense-chef']['account']}"
-   "#{node['smartsense-chef']['id']}"
-   "#{node['smartsense-chef']['email']}"
-   "#{node['smartsense-chef']['directory']}"
-   "#{node['smartsense-chef']['port']}"
-   "#{node['smartsense-chef']['certificate']}"
-   "#{node['smartsense-chef']['java_home']}"
-   "#{node['smartsense-chef']['cluster_name']}"
-   "#{node['smartsense-chef']['secured']}"
-   EOH
+package "smartsense-hst" do
+   :nothing
+end
+
+#service "smartsense-hst" do
+#   action [ :enable , :start ]
+#end
+
+template "/etc/hst/conf/hst-server.ini" do
+   source 'hst-server.ini.erb'
+   mode '0644'
 end

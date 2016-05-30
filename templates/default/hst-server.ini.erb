@@ -1,0 +1,142 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+[security]
+server.keys_dir = /var/lib/smartsense/hst-server/keys
+; server.disabled.ciphers=SSL_RSA_WITH_DES_CBC_SHA|SSL_RSA_EXPORT_WITH_RC4_40_MD5|SSL_DHE_RSA_WITH_DES_CBC_SHA|SSL_DHE_DSS_WITH_DES_CBC_SHA|SSL_RSA_EXPORT_WITH_DES40_CBC_SHA|SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA|SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA|SSL_RSA_WITH_3DES_EDE_CBC_SHA|SSL_DHE_RSA_WITH_DES_CBC_SHA
+;server.disabled.protocols=SSL|SSLv2|SSLv3
+server.one_way_ssl.port=9440
+server.two_way_ssl.port=9441
+
+
+; Shared key is available at the source as well as at HortonWorks site.
+anonymization.shared.key=/var/lib/smartsense/hst-common/anonymization/keys/shared_anonymization.key
+
+; Private key is only available at the source and cannot be unmasked outside.
+anonymization.private.key=/var/lib/smartsense/hst-common/anonymization/keys/private_anonymization.key
+
+; Public key is required for encrypting the file.
+encryption.public.key=/var/lib/smartsense/hst-common/encryption/keys/public.key
+
+; method used to find the file size of encrypted bundle
+; NO_SIZE : no file size detection
+; ADD_BUFFER : ad buffer as per encryption.file.size.buffer to unencrypted file
+encryption.file.size.method=NO_SIZE
+
+; buffer in bytes added to uncrypted file size for encrypted bundle download
+encryption.file.size.buffer=1536
+
+
+[java]
+home=<% node['smartsense-chef']['java_home'] %>
+
+[webapp]
+dir=/usr/hdp/share/hst/hst-server/web
+
+[client]
+; thread pool maximums
+threadpool.size.max=40
+; Is password-less ssh setup?
+; Can HST server do password-less ssh into all agents?
+password_less_ssh.enabled=false
+; SSH key for data capture
+sshkey.path=
+
+[server]
+; Server HTTP settings
+http.session.inactive_timeout=1800
+
+; Temporary directory used by server to keep local bundles
+; during bundle preparation. Should be different than agent tmp
+; dirTypical value is '/var/lib/smartsense/hst-server/tmp'. Make sure
+; this directory will always have at least 5G of free space.
+tmp.dir=/var/lib/smartsense/hst-server/tmp
+
+;Web UI Port
+port=9000
+
+; Storage directory for saving bundles. Typical value is '/var/lib/smartsense/hst-server/data'.
+; Make sure this directory has enough free space (as indicated by server.min_required_storage)
+storage.dir=/var/lib/smartsense/hst-server/data
+
+ssl_enabled=false
+; Minimum size required for storage directory (in GB)
+min_required_storage=1
+
+
+[management]
+;directory to store updates
+updates.dir=/var/lib/smartsense/hst-server/updates
+config.update.watcher.config.file=/etc/hst/conf/config-watcher.json
+config.updates.dir=/var/lib/smartsense/hst-server/updates
+config.update.check.interval.millis=5000
+
+[ulimit]
+; linux open-file limit
+open.files=10000
+
+[agent]
+; Agent request processing timeout (in seconds)
+request.processing.timeout=7200
+capture.level=L2
+
+; Agent request sync-up inteval (in seconds)
+request.syncup.interval=180
+
+[bundle]
+; Bundle monitor interval (in seconds)
+monitor.interval=20
+; Bundle alert for status in-progress nearing the request processing by the given percent
+; of the timeout window.  Valid value is between 0.25 and 0.99, otherwise default value 0.6
+; will be used
+alert.progress.timeout.percent=0.6
+
+[cluster]
+; Cluster name
+name=<% node['smartsense-chef']['cluster_name'] %>
+; Flag to indicate that the HDP cluster is secured or not
+secured=false
+
+[customer]
+; Customer information
+; The name of your Organization as it is registered with Hortonworks Support.
+account.name=<% node['smartsense-chef']['account'] %>
+
+;Email address used to send bundle upload, and recommendation availability notifications.
+notification.email=<% node['smartsense-chef']['email'] %>
+
+; Your SmartSense ID is available from Hortonworks Support and uniquely identifies your account.
+smartsense.id=<% node['smartsense-chef']['id'] %>
+
+[gateway]
+; When enabled, bundles are automatically sent to Hortonworks
+; as soon as they are successfully captured. This features eliminates the need
+; for manually downloading and uploading bundles to Hortonworks for analysis
+; or troubleshooting
+enabled=false
+; Fully qualified domain name of the host where the SmartSense Gateway process has been deployed and is running
+host=Please Specify
+; Port for gateway registration (gateway.registration.port [default:9450] on SmartSense Gateway)
+registration.port=9450
+; Port on which gateway is listening (gateway.port [default:9451] on SmartSense Gateway)
+port=9451
+; When a gateway is re-installed all HST Server's need to be re-registered.  When
+; enabled this can be done automatically.
+client.registration.reset.enabled=true
+; Buffer size for client-side operations like encryption
+data.transfer.buffer.size=2048
+
+

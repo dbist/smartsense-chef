@@ -4,8 +4,8 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
-#include_recipe "smartsense-chef::smartsense_setup"
 include_recipe 'java'
+include_recipe "smartsense-chef::smartsense_setup"
 
 # copy smartsense package to /tmp directory
 cookbook_file "/tmp/smartsense-hst_1.2.1-161_amd64.deb" do

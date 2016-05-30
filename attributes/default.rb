@@ -4,7 +4,7 @@ default['smartsense-chef']['email'] = 'dummyaccount@dummy.com'
 default['smartsense-chef']['directory'] = '/var/lib/smartsense/hst-server/data'
 default['smartsense-chef']['port'] = '9000'
 default['smartsense-chef']['certificate'] = 'n'
-default['smartsense-chef']['java_home'] = '/usr/lib/jvm/java-7-openjdk-amd64'
+default['smartsense-chef']['java_home'] = '/usr/lib/jvm/java-8-oracle-amd64'
 default['smartsense-chef']['cluster_name'] = 'samplecluster'
 default['smartsense-chef']['secured'] = 'n'
 
