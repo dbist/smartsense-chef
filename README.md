@@ -4,6 +4,7 @@ TODO
 ====
 
 1. Still requires to manually start hst server
+2. test for listening port, replace with attribute
 3. Separate cookbook for hst and hst agent 
 4. Add Chef spec
 5. Do I need a gateway?
