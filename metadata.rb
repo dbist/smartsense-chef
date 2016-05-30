@@ -5,3 +5,5 @@ license 'Apache'
 description 'Installs/Configures smartsense-chef'
 long_description 'Installs/Configures smartsense-chef'
 version '0.1.0'
+
+depends 'java'
