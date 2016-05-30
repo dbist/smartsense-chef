@@ -3,7 +3,7 @@ This cookbook installs and configures Hortonworks SmartSense standalone.
 TODO
 ====
 
-2. Use template file for hst-server.ini (after converging requires to run `hst setup` how to run setup as part of convege?
+2. Use template file for hst-server.ini (after converging requires to run `hst setup` how to run setup as part of convege?)
 3. Separate cookbook for hst and hst agent 
 4. Add Chef spec
 5. Do I need a gateway?
