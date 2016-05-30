@@ -18,8 +18,7 @@ dpkg_package "/tmp/smartsense-hst_1.2.1-161_amd64.deb" do
   action :install	
 end
 
-# package dependencies
-
+# SmartSense results are more accurate with the following dependencies installed
 package "wget" do
 end
 
