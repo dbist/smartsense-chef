@@ -8,7 +8,6 @@ default['smartsense-chef']['java_home'] = '/usr/lib/jvm/java-7-openjdk-amd64'
 default['smartsense-chef']['cluster_name'] = 'samplecluster'
 default['smartsense-chef']['secured'] = 'n'
 
-# http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.tar.gz
 # Override defaults for the Java cookbook
 default['java']['jdk_version'] = 8
 default['java']['install_flavor'] = "oracle"
