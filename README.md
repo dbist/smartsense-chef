@@ -9,7 +9,7 @@ TODO
 6. Need SSL certificate
 7. Replace hard-coded smartsense*.deb file with URL of the local repo, good for now as it does not require internet connection but for deployment, need to replace with remote_file
 10. make sure requirements are met by SmartSense package and not included in chef recipe.
-11. Although ServerSpec is more important than ChefSpec, the following resources are not covered by current ChefSpec
+11. Although ServerSpec is more important than ChefSpec, the following resources are not covered by current ChefSpec coverage report
   
   template[/etc/hst/conf/hst-server.ini]   smartsense-chef/recipes/smartsense_setup.rb:14
   cookbook_file[/tmp/smartsense-hst_1.2.1-161_amd64.deb]   smartsense-chef/recipes/default.rb:10
