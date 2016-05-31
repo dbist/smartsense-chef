@@ -19,6 +19,8 @@ Please see [latest documentation](http://docs.hortonworks.com/HDPDocuments/SS1/S
 
 Depends on https://github.com/agileorbit-cookbooks/java.git
 
+Since smartsense-hst package is provided by Hortonworks via support portal, download the file manually and place in files directory and/or replace with remote file in the recipe and upload the package to local repo
+
 Usage
 =====
 
@@ -27,8 +29,9 @@ Add `smartsense` to your node's `run_list`.
 Testing
 =======
 
-A `.kitchen.yaml` file is provided. Run `kitchen converge` to verify this cookbook.
+A `.kitchen.yaml` file is provided. 
 
-1. Run `foodcritic` for lint tests
-2. Run `kitchen verify` for ServerSpec tests
-3. Run `rspec --color` for ChefSpec tests
+Run `kitchen converge` to verify this cookbook.
+Run `foodcritic` for lint tests
+Run `kitchen verify` for ServerSpec tests
+Run `rspec --color` for ChefSpec tests
