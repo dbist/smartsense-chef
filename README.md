@@ -30,5 +30,5 @@ Testing
 
 A `.kitchen.yaml` file is provided. Run `kitchen converge` to verify this cookbook.
 
-`foodcritic .` rules passed
-contains a set of initial ServerSpec tests
+`foodcritic` rules passed
+Contains a set of initial ServerSpec tests
