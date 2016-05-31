@@ -14,8 +14,6 @@ TODO
 10. make sure requirements are met by SmartSense package and not included in chef recipe.
 11. foodcritic FC002: Avoid string interpolation where not required: ./recipes/smartsense_setup.rb:8
 12. foodcritic FC005: Avoid repetition of resource declarations: ./recipes/default.rb:22
-13. foodcritic FC064: Ensure issues_url is set in metadata: ./metadata.rb:1
-14. foodcritic FC065: Ensure source_url is set in metadata: ./metadata.rb:1
 
 Requirements
 ============
