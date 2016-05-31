@@ -5,7 +5,7 @@
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
 # template requires a directory created
-config_dir = "#{node['smartsense-chef']['deploy_to']}"
+config_dir = node['smartsense-chef']['deploy_to']
 
 directory config_dir do
   recursive true
