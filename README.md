@@ -12,8 +12,6 @@ TODO
 7. Replace hard-coded smartsense*.deb file with URL of the local repo, good for now as it does not require internet connection but for deployment, need to replace with remote_file
 9. TestKitchen
 10. make sure requirements are met by SmartSense package and not included in chef recipe.
-11. foodcritic FC002: Avoid string interpolation where not required: ./recipes/smartsense_setup.rb:8
-12. foodcritic FC005: Avoid repetition of resource declarations: ./recipes/default.rb:22
 
 Requirements
 ============
