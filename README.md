@@ -29,5 +29,6 @@ Testing
 
 A `.kitchen.yaml` file is provided. Run `kitchen converge` to verify this cookbook.
 
-`foodcritic` rules passed
-Contains a set of initial ServerSpec tests
+1. Run `foodcritic` for lint tests
+2. Run `kitchen verify` for ServerSpec tests
+3. Run `rspec --color` for ChefSpec tests
