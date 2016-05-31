@@ -4,10 +4,6 @@ set :os , :family => 'ubuntu' , :release => 12.04
 
 describe 'smartsense-chef::default' do
  it 'hst server is installed' do
-   expect(package 'smartsense-hst').to be_installed  
- end
-
- it 'hst server is installed' do
    expect(package 'smartsense-hst').to be_installed
  end
 
