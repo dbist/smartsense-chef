@@ -11,10 +11,18 @@ RSpec.configure do |config|
   config.version = '12.04'
 end
 
-describe 'smartsense-chef::smartsense_setup' do
+describe 'smartsense-chef::default' do
   let(:chef_run) { ChefSpec::SoloRunner.converge(described_recipe) }
 
   it 'installs hst' do
-    expect(chef_run).to install_dpkg_package('smartsense-hst').with_version('1.2.1')
+    expect(chef_run).to install_dpkg_package('/tmp/smartsense-hst_1.2.1-161_amd64.deb')
+  end
+end
+
+describe 'smartsense-chef::smartsense_setup' do
+  let(:chef_run) { ChefSpec::SoloRunner.converge(described_recipe) }
+
+  it 'directory exists' do
+    expect(chef_run).to create_directory('/etc/hst/conf/')
   end
 end
