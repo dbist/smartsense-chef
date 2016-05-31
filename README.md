@@ -24,7 +24,7 @@ Since smartsense-hst package is provided by Hortonworks via support portal, down
 Usage
 =====
 
-Add `smartsense` to your node's `run_list`.
+Add `smartsense-chef` to your node's `run_list`.
 
 Testing
 =======
