@@ -11,14 +11,22 @@ TODO
 10. make sure requirements are met by SmartSense package and not included in chef recipe.
 11. Although ServerSpec is more important than ChefSpec, the following resources are not covered by current ChefSpec coverage report
   
-  template[/etc/hst/conf/hst-server.ini]   smartsense-chef/recipes/smartsense_setup.rb:14
-  cookbook_file[/tmp/smartsense-hst_1.2.1-161_amd64.deb]   smartsense-chef/recipes/default.rb:10
-  apt_package[wget]                  smartsense-chef/recipes/default.rb:22
-  apt_package[sysstat]               smartsense-chef/recipes/default.rb:22
-  apt_package[dstat]                 smartsense-chef/recipes/default.rb:22
-  apt_package[lsof]                  smartsense-chef/recipes/default.rb:22
-  apt_package[net-tools]             smartsense-chef/recipes/default.rb:22
-  apt_package[python2.7]             smartsense-chef/recipes/default.rb:22
+  1. template[/etc/hst/conf/hst-server.ini]
+  2. smartsense-chef/recipes/smartsense_setup.rb:14
+  3. cookbook_file[/tmp/smartsense-hst_1.2.1-161_amd64.deb]
+  4. smartsense-chef/recipes/default.rb:10
+  5. apt_package[wget]
+  6. smartsense-chef/recipes/default.rb:22
+  7. apt_package[sysstat]               
+  8. smartsense-chef/recipes/default.rb:22
+  9. apt_package[dstat]                 
+  10. smartsense-chef/recipes/default.rb:22
+  11. apt_package[lsof]                  
+  12. smartsense-chef/recipes/default.rb:22
+  13. apt_package[net-tools]             
+  14. smartsense-chef/recipes/default.rb:22
+  15. apt_package[python2.7]
+  16. smartsense-chef/recipes/default.rb:22
 
 Requirements
 ============
