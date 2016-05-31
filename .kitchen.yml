@@ -15,6 +15,9 @@ provisioner:
 # network is only necessary if accessing SmartSense via UI
 platforms:
   - name: precise64
+#    run_list:
+#      - 'recipe['java::oracle']'
+#      - 'recipe['smartsense-chef::default']'
     driver:
       box: precise64
       box_url: precise-server-cloudimg-amd64-vagrant-disk1.box
@@ -25,4 +28,5 @@ suites:
   - name: default
     run_list:
       - recipe[smartsense-chef::default]
+      - recipe[smartsense-chef::smartsense_setup]
     attributes:
