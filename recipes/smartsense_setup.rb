@@ -22,6 +22,6 @@ end
 #   notifies :run, 'execute[hst start]', :immediately
 # end
 
-execute 'hst start' do
-  command 'hst start'
-end
+#execute 'hst start' do
+#  command 'hst start'
+#end
