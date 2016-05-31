@@ -19,20 +19,7 @@ dpkg_package "/tmp/smartsense-hst_1.2.1-161_amd64.deb" do
 end
 
 # SmartSense results are more accurate with the following dependencies installed
-package "wget" do
-end
-
-package "sysstat" do
-end
-
-package "dstat" do
-end
-
-package "lsof" do
-end
-
-package "net-tools" do
-end
-
-package "python2.7" do
+%w{wget sysstat dstat lsof net-tools python2.7}.each do |pkg|
+   package pkg do
+   end
 end
