@@ -14,19 +14,6 @@ TODO
   1. template[/etc/hst/conf/hst-server.ini]
   2. smartsense-chef/recipes/smartsense_setup.rb:14
   3. cookbook_file[/tmp/smartsense-hst_1.2.1-161_amd64.deb]
-  4. smartsense-chef/recipes/default.rb:10
-  5. apt_package[wget]
-  6. smartsense-chef/recipes/default.rb:22
-  7. apt_package[sysstat]               
-  8. smartsense-chef/recipes/default.rb:22
-  9. apt_package[dstat]                 
-  10. smartsense-chef/recipes/default.rb:22
-  11. apt_package[lsof]                  
-  12. smartsense-chef/recipes/default.rb:22
-  13. apt_package[net-tools]             
-  14. smartsense-chef/recipes/default.rb:22
-  15. apt_package[python2.7]
-  16. smartsense-chef/recipes/default.rb:22
 
 Requirements
 ============
