@@ -46,7 +46,11 @@ end
 describe 'smartsense-chef::smartsense_setup' do
   let(:chef_run) { ChefSpec::SoloRunner.converge(described_recipe) }
 
-  it 'directory exists' do
+  it 'hst conf directory exists' do
     expect(chef_run).to create_directory('/etc/hst/conf/')
+  end
+
+  it 'hst-server.ini file exists' do
+    expect(chef_run).to create_template('/etc/hst/conf/hst-server.ini')
   end
 end

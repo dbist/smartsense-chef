@@ -11,8 +11,6 @@ TODO
 10. make sure requirements are met by SmartSense package and not included in chef recipe.
 11. Although ServerSpec is more important than ChefSpec, the following resources are not covered by current ChefSpec coverage report
   
-  1. template[/etc/hst/conf/hst-server.ini]
-  2. smartsense-chef/recipes/smartsense_setup.rb:14
   3. cookbook_file[/tmp/smartsense-hst_1.2.1-161_amd64.deb]
 
 Requirements
