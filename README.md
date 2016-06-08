@@ -3,14 +3,14 @@ This cookbook installs and configures Hortonworks SmartSense standalone version 
 TODO
 ====
 
+1. might need to use checksum to make sure file does not get downloaded twice, at every converge checksum changes
 2. test for listening port, replace with attribute
 3. Separate cookbook for hst and hst agent 
+4. rspec returns the below, how to handle cached files? 
+	rspec ./spec/default_spec.rb:57 # smartsense-chef::smartsense_setup smartsense-hst file exists
 5. Do I need a gateway?
 6. Need SSL certificate
 10. make sure requirements are met by SmartSense package and not included in chef recipe.
-11. Although ServerSpec is more important than ChefSpec, the following resources are not covered by current ChefSpec coverage report
-  
-  3. cookbook_file[/tmp/smartsense-hst_1.2.1-161_amd64.deb]
 
 Requirements
 ============

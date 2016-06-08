@@ -15,7 +15,7 @@ describe 'smartsense-chef::default' do
   let(:chef_run) { ChefSpec::SoloRunner.converge(described_recipe) }
 
   it 'installs hst' do
-    expect(chef_run).to install_dpkg_package('/tmp/smartsense-hst_1.2.2-0_amd64.deb')
+    expect(chef_run).to install_dpkg_package("#{Chef::Config[:file_cache_path]}/smartsense-hst_1.2.2-0_amd64.deb")
   end
 
   it 'installs wget' do
@@ -53,4 +53,8 @@ describe 'smartsense-chef::smartsense_setup' do
   it 'hst-server.ini file exists' do
     expect(chef_run).to create_template('/etc/hst/conf/hst-server.ini')
   end
+
+ it 'smartsense-hst file exists' do
+   expect(chef_run).to create_remote_file_if_missing("#{Chef::Config[:file_cache_path]}/smartsense-hst_1.2.2-0_amd64.deb")
+ end
 end

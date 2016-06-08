@@ -2,7 +2,7 @@
 # Cookbook Name:: smartsense-chef
 # Recipe:: smartsense_setup
 #
-# Copyright (c) 2016 The Authors, All Rights Reserved.
+# Copyright (c) 2016 Artem Ervits, All Rights Reserved.
 
 # template requires a directory created
 config_dir = node['smartsense-chef']['deploy_to']
