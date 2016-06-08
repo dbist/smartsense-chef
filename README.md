@@ -1,4 +1,4 @@
-This cookbook installs and configures Hortonworks SmartSense standalone.
+This cookbook installs and configures Hortonworks SmartSense standalone version 1.2.2.
 
 TODO
 ====
@@ -7,7 +7,6 @@ TODO
 3. Separate cookbook for hst and hst agent 
 5. Do I need a gateway?
 6. Need SSL certificate
-7. Replace hard-coded smartsense*.deb file with URL of the local repo, good for now as it does not require internet connection but for deployment, need to replace with remote_file
 10. make sure requirements are met by SmartSense package and not included in chef recipe.
 11. Although ServerSpec is more important than ChefSpec, the following resources are not covered by current ChefSpec coverage report
   
