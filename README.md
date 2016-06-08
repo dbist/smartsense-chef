@@ -10,6 +10,7 @@ TODO
 	rspec ./spec/default_spec.rb:57 # smartsense-chef::smartsense_setup smartsense-hst file exists
 5. Do I need a gateway?
 6. Need SSL certificate
+7. replace smartsense checksum with attribute, do the same with version?
 10. make sure requirements are met by SmartSense package and not included in chef recipe.
 
 Requirements
