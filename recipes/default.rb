@@ -11,6 +11,7 @@ remote_file "#{Chef::Config[:file_cache_path]}/smartsense-hst_#{node['smartsense
    mode '0770'
    action :create_if_missing
    checksum node['smartsense-chef']['checksum']
+   not_if { node['smartsense-chef']['use_local_repo'] }
 end
 
 # install smartsense package on a node
