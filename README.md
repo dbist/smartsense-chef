@@ -11,9 +11,6 @@ TODO
 6. Need SSL certificate
 8. make sure requirements are met by SmartSense package and not included in chef recipe.
 9. rspec --color complains about hst remote file if missing if it's pointing to file cache vs. hard path to /tmp/smartsense-hst
-10. an option to install from local repo or remote file
-11. in attributes have attribute for private package repo true/false
-	not_if: use_local_repo (true/false)
 12. if local repo then it's not dpkg but package, use condition
 ```
 package "smartsense-hst" do
