@@ -10,6 +10,9 @@ default['smartsense-chef']['secured'] = 'n'
 default['smartsense-chef']['deploy_to'] = '/etc/hst/conf/'
 default['smartsense-chef']['smartsense_version'] = '1.2.2-0_amd64'
 default['smartsense-chef']['use_local_repo'] = 'false'
+
+# checksum is SHA-256 checksum of a file, i.e. `sha256sum smartsense-hst_1.2.2-0_amd64.deb`
+default['smartsense-chef']['checksum'] = '2b4a2fcc6e74a8a763eb43e3ec257a5e4e667956baf0f1aa1fcb2111539d7d68'
 default['smartsense-chef']['repo_url'] = 'http://public-repo-1.hortonworks.com/ambari/ubuntu12/2.x/updates/2.2.2.0/pool/main/s/smartsense-hst'
 
 # Override defaults for the Java cookbook

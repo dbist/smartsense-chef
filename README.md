@@ -3,7 +3,6 @@ This cookbook installs and configures Hortonworks SmartSense standalone version 
 TODO
 ====
 
-1. might need to use checksum to make sure file does not get downloaded twice, at every converge checksum changes
 2. test for listening port, replace with attribute
 3. Separate cookbook for hst and hst agent 
 4. rspec returns the below, how to handle cached files? 
