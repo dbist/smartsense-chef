@@ -4,7 +4,6 @@
 #
 # Copyright (c) 2016 Artem Ervits, All Rights Reserved.
 
-include_recipe "smartsense-chef::smartsense_setup"
 filename = "#{Chef::Config[:file_cache_path]}/smartsense-hst_#{node['smartsense-chef']['smartsense_version']}.deb"
 package_src = "#{node['smartsense-chef']['repo_url']}/smartsense-hst_#{node['smartsense-chef']['smartsense_version']}.deb"
 remote_file filename do
@@ -19,11 +18,13 @@ end
 dpkg_package "#{Chef::Config[:file_cache_path]}/smartsense-hst_1.2.2-0_amd64.deb" do
    action :install
    not_if { node['smartsense-chef']['use_local_repo'] }	
+   notifies :run, 'execute[hst start]', :immediately
 end
 
 package "smartsense-hst" do
    only_if { node['smartsense-chef']['use_local_repo'] }
 #   version '1.2.2'
+#   notifies :run, 'execute[hst start]', :immediately
 end
 
 # SmartSense results are more accurate with the following dependencies installed
@@ -31,3 +32,5 @@ end
    package pkg do
    end
 end
+
+include_recipe "smartsense-chef::smartsense_setup"
