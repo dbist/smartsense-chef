@@ -6,8 +6,9 @@
 
 include_recipe "smartsense-chef::smartsense_setup"
 
-remote_file "#{Chef::Config[:file_cache_path]}/smartsense-hst_1.2.2-0_amd64.deb" do   
-   source 'http://public-repo-1.hortonworks.com/ambari/ubuntu12/2.x/updates/2.2.2.0/pool/main/s/smartsense-hst/smartsense-hst_1.2.2-0_amd64.deb'
+remote_file "#{Chef::Config[:file_cache_path]}/smartsense-hst_#{node['smartsense-chef']['smartsense_version']}.deb" do   
+#   source 'http://public-repo-1.hortonworks.com/ambari/ubuntu12/2.x/updates/2.2.2.0/pool/main/s/smartsense-hst/smartsense-hst_1.2.2-0_amd64.deb'
+   source "http://public-repo-1.hortonworks.com/ambari/ubuntu12/2.x/updates/2.2.2.0/pool/main/s/smartsense-hst/smartsense-hst_#{node['smartsense-chef']['smartsense_version']}.deb"
    mode '0770'
    action :create_if_missing
 end
