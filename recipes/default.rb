@@ -18,6 +18,12 @@ dpkg_package "#{Chef::Config[:file_cache_path]}/smartsense-hst_1.2.2-0_amd64.deb
   action :install	
 end
 
+# package "smartsense-hst" do
+#    action :install
+#    version '1.2.2-0_amd64'
+#    provider Chef::Provider::Package::Apt
+# end
+
 # SmartSense results are more accurate with the following dependencies installed
 %w{wget sysstat dstat lsof net-tools python2.7}.each do |pkg|
    package pkg do
