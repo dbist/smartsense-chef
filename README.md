@@ -11,7 +11,21 @@ TODO
 5. Do I need a gateway?
 6. Need SSL certificate
 7. replace smartsense checksum with attribute, do the same with version?
-10. make sure requirements are met by SmartSense package and not included in chef recipe.
+8. make sure requirements are met by SmartSense package and not included in chef recipe.
+9. rspec --color complains about hst remote file if missing if it's pointing to file cache vs. hard path to /tmp/smartsense-hst
+10. an option to install from local repo or remote file
+11. in attributes have attribute for private package repo true/false
+	not_if: use_local_repo (true/false)
+12. if local repo then it's not dpkg but package, use condition
+```
+package "smartsense-hst" do
+   action :install
+   version '1.2.2-0_amd64'
+end
+```
+13. BUG: hst status should return non-zero if status is off
+14. serverspec test should check whether hst process is running (notify smartsense bash action, smartsense is not running then do nothing)
+15. removing depends 'java' breaks after making changes
 
 Requirements
 ============

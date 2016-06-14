@@ -55,6 +55,7 @@ describe 'smartsense-chef::smartsense_setup' do
   end
 
  it 'smartsense-hst file exists' do
-   expect(chef_run).to create_remote_file_if_missing("#{Chef::Config[:file_cache_path]}/smartsense-hst_1.2.2-0_amd64.deb")
+#   expect(chef_run).to create_remote_file_if_missing("#{Chef::Config[:file_cache_path]}/smartsense-hst_1.2.2-0_amd64.deb")
+    expect(chef_run).to create_remote_file_if_missing("/tmp/smartsense-hst_1.2.2-0_amd64.deb")
  end
 end
