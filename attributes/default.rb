@@ -10,7 +10,7 @@ default['smartsense-chef']['secured'] = 'n'
 default['smartsense-chef']['deploy_to'] = '/etc/hst/conf/'
 default['smartsense-chef']['smartsense_version'] = '1.2.2-0_amd64'
 default['smartsense-chef']['use_local_repo'] = 'false'
-default['smartsense-chef']['repo_url'] = 'http://public-repo-1.hortonworks.com/ambari/ubuntu12/2.x/updates/2.2.2.0/pool/main/s/smartsense-hst/'
+default['smartsense-chef']['repo_url'] = 'http://public-repo-1.hortonworks.com/ambari/ubuntu12/2.x/updates/2.2.2.0/pool/main/s/smartsense-hst'
 
 # Override defaults for the Java cookbook
 default['java']['jdk_version'] = 8
