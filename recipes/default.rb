@@ -6,7 +6,8 @@
 
 include_recipe "smartsense-chef::smartsense_setup"
 
-remote_file "#{Chef::Config[:file_cache_path]}/smartsense-hst_#{node['smartsense-chef']['smartsense_version']}.deb" do    source "#{node['smartsense-chef']['repo_url']}/smartsense-hst_#{node['smartsense-chef']['smartsense_version']}.deb"
+remote_file "#{Chef::Config[:file_cache_path]}/smartsense-hst_#{node['smartsense-chef']['smartsense_version']}.deb" do
+   source "#{node['smartsense-chef']['repo_url']}/smartsense-hst_#{node['smartsense-chef']['smartsense_version']}.deb"
    mode '0770'
    action :create_if_missing
    checksum node['smartsense-chef']['checksum']
