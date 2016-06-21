@@ -3,7 +3,7 @@ This cookbook installs and configures Hortonworks SmartSense standalone version 
 TODO
 ====
 
-1. add apt-key adv keyserver following http://docs.hortonworks.com/HDPDocuments/Ambari-2.2.2.0/bk_Installing_HDP_AMB/content/_download_the_ambari_repo_ubuntu14.html
+1. add apt-key adv keyserver following http://docs.hortonworks.com/HDPDocuments/Ambari-2.2.2.0/bk_Installing_HDP_AMB/content/_download_the_ambari_repo_ubuntu12.html
 2. test for listening port, replace with attribute
 3. Separate cookbook for hst and hst agent 
 4. rspec returns the below, how to handle cached files? 
