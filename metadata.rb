@@ -8,4 +8,5 @@ version '0.1.0'
 source_url 'https://github.com/dbist/smartsense-chef' if respond_to?(:source_url)
 issues_url 'https://github.com/dbist/smartsense-chef' if respond_to?(:issues_url)
 
-depends 'java'
+depends "java"
+depends "apt"

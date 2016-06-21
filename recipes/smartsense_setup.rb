@@ -11,12 +11,13 @@ directory config_dir do
   recursive true
 end
 
-template "#{config_dir}/hst-server.ini" do
+template "#{config_dir}hst-server.ini" do
    source 'hst-server.ini.erb'
    mode '0644'
+   subscribes :run, 'dpkg_package "#{Chef::Config[:file_cache_path]}/smartsense-hst_1.2.2-0_amd64.deb"'
 end
 
 execute 'hst start' do
+#  only_if 'template "#{config_dir}/hst-server.ini"'
   command 'hst start'
-  action :nothing
 end
