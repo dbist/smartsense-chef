@@ -23,3 +23,5 @@ default['java']['oracle']['jce']['enabled'] = true
 default['java']['oracle']['accept_oracle_download_terms'] = true
 default['java']['set_default'] = true
 
+# APT repository attributes
+default['apt']['compile_time_update'] = 'true'

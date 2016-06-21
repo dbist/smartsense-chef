@@ -4,6 +4,8 @@
 #
 # Copyright (c) 2016 Artem Ervits, All Rights Reserved.
 
+include_recipe "apt"
+
 filename = "#{Chef::Config[:file_cache_path]}/smartsense-hst_#{node['smartsense-chef']['smartsense_version']}.deb"
 package_src = "#{node['smartsense-chef']['repo_url']}/smartsense-hst_#{node['smartsense-chef']['smartsense_version']}.deb"
 remote_file filename do
@@ -11,20 +13,28 @@ remote_file filename do
    mode '0770'
    action :create_if_missing
    checksum node['smartsense-chef']['checksum']
-   not_if { node['smartsense-chef']['use_local_repo'] || File::exists?(filename) }
+#   not_if { node['smartsense-chef']['use_local_repo'] || File::exists?(filename) }
 end
 
 # install smartsense package on a node
 dpkg_package "#{Chef::Config[:file_cache_path]}/smartsense-hst_1.2.2-0_amd64.deb" do
    action :install
-   not_if { node['smartsense-chef']['use_local_repo'] }	
+#   not_if { node['smartsense-chef']['use_local_repo'] }	
    notifies :run, 'execute[hst start]', :immediately
+end
+
+apt_repository 'ambari' do
+   only_if { node['smartsense-chef']['use_local_repo'] }
+   uri 'http://public-repo-1.hortonworks.com/ambari/ubuntu12/2.x/updates/2.2.2.0'
+   components ['main']
+   distribution 'Ambari'
+   action :add
 end
 
 package "smartsense-hst" do
    only_if { node['smartsense-chef']['use_local_repo'] }
 #   version '1.2.2'
-#   notifies :run, 'execute[hst start]', :immediately
+   notifies :run, 'execute[hst start]', :immediately
 end
 
 # SmartSense results are more accurate with the following dependencies installed
