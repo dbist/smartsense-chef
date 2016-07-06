@@ -31,6 +31,10 @@ apt_repository 'ambari' do
    components ['main']
    distribution 'Ambari'
    action :add
+
+# requires Chef 12.9
+   keyserver "keyserver.ubuntu.com"
+   key "B9733A7A07513CAD"
 end
 
 package "smartsense-hst" do
