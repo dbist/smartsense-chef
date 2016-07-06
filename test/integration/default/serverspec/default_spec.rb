@@ -41,9 +41,15 @@ describe 'smartsense-chef::default' do
    it { should exist }
  end
 
+ describe file('/etc/hst/conf/hst-gateway.ini') do
+   it { should exist }
+ end
 
-# uncomment when hst start is automated
-# it 'responds on port "#{node[:smartsense-chef][:port]"' do
-#   expect(port 9000).to be_listening 'tcp'
-# end
+ it 'responds on port 9000' do
+   expect(port 9000).to be_listening 'tcp'
+ end
+
+ it 'responds on port 9451' do
+   expect(port 9451).to be_listening 'tcp'
+ end
 end
