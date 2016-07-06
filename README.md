@@ -27,6 +27,8 @@ Requirements
 
 Please see [latest documentation](http://docs.hortonworks.com/HDPDocuments/SS1/SmartSense-1.2.2/bk_smartsense_admin/content/os_requirements.html).
 
+To deploy Gateway, uncomment include statement in default recipe and replace attribute properties for sftp username and password with proper credentials.
+
 Dependencies
 ============
 

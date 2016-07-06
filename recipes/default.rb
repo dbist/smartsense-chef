@@ -51,4 +51,4 @@ end
 
 include_recipe "smartsense-chef::smartsense_setup"
 # uncomment if you want to deploy smartsense gateway
-#include_recipe "smartsense-chef::smartsense_gateway"
+# include_recipe "smartsense-chef::smartsense_gateway"

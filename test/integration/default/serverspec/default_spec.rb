@@ -41,15 +41,24 @@ describe 'smartsense-chef::default' do
    it { should exist }
  end
 
- describe file('/etc/hst/conf/hst-gateway.ini') do
-   it { should exist }
- end
-
  it ' hst server responds on port 9000' do
    expect(port 9000).to be_listening 'tcp'
  end
 
+ describe command('hst start') do
+  its(:exit_status) { should eq 0 }
+ end
+
+ # gateway specific tests will only pass if gateway is converged
+ describe file('/etc/hst/conf/hst-gateway.ini') do
+   it { should exist }
+ end
+
  it 'hst gateway responds on port 9451' do
    expect(port 9451).to be_listening 'tcp'
+ end
+
+ describe command('hst gateway start') do
+  its(:exit_status) { should eq 0 }
  end
 end
