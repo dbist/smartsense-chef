@@ -27,9 +27,11 @@ Requirements
 
 Please see [latest documentation](http://docs.hortonworks.com/HDPDocuments/SS1/SmartSense-1.2.2/bk_smartsense_admin/content/os_requirements.html).
 
-Depends on https://github.com/agileorbit-cookbooks/java.git
+Dependencies
+============
 
-Since smartsense-hst package is provided by Hortonworks via support portal, download the file manually and place in files directory and/or replace with remote file in the recipe and upload the package to local repo
+https://github.com/agileorbit-cookbooks/java.git
+https://github.com/chef-cookbooks/apt
 
 Usage
 =====
@@ -45,3 +47,8 @@ A `.kitchen.yaml` file is provided.
 2. Run `foodcritic` for lint tests
 3. Run `kitchen verify` for ServerSpec tests
 4. Run `rspec --color` for ChefSpec tests
+
+Technical Support
+=================
+
+This cookbook is provided without any warranties. Use at your own risk. To file a bug report, please respond on [this thread](https://community.hortonworks.com/content/repo/38515/smartsense-chef-cookbook-for-non-ambari-install.html).
