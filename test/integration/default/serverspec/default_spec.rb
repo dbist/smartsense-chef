@@ -45,11 +45,11 @@ describe 'smartsense-chef::default' do
    it { should exist }
  end
 
- it 'responds on port 9000' do
+ it ' hst server responds on port 9000' do
    expect(port 9000).to be_listening 'tcp'
  end
 
- it 'responds on port 9451' do
+ it 'hst gateway responds on port 9451' do
    expect(port 9451).to be_listening 'tcp'
  end
 end
