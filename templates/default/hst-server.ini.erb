@@ -126,13 +126,13 @@ smartsense.id=<%= node['smartsense-chef']['id'] %>
 ; as soon as they are successfully captured. This features eliminates the need
 ; for manually downloading and uploading bundles to Hortonworks for analysis
 ; or troubleshooting
-enabled=false
+enabled=<%= node['smartsense-chef']['gateway_enabled'] %>
 ; Fully qualified domain name of the host where the SmartSense Gateway process has been deployed and is running
-host=Please Specify
+host=<%= node['smartsense-chef']['gateway_host'] %>
 ; Port for gateway registration (gateway.registration.port [default:9450] on SmartSense Gateway)
 registration.port=9450
 ; Port on which gateway is listening (gateway.port [default:9451] on SmartSense Gateway)
-port=9451
+port=<%= node['smartsense-chef']['gateway_port'] %>
 ; When a gateway is re-installed all HST Server's need to be re-registered.  When
 ; enabled this can be done automatically.
 client.registration.reset.enabled=true

@@ -1,4 +1,4 @@
-This cookbook installs and configures Hortonworks SmartSense standalone version 1.2.2.
+This cookbook installs and configures Hortonworks SmartSense standalone version 1.2.2. Additionally, you can deploy SmartSense Gateway for easy bundle upload.
 
 TODO
 ====
@@ -8,7 +8,6 @@ TODO
 3. Separate cookbook for hst and hst agent 
 4. rspec returns the below, how to handle cached files? 
 	rspec ./spec/default_spec.rb:57 # smartsense-chef::smartsense_setup smartsense-hst file exists
-5. Do I need a gateway?
 6. Need SSL certificate
 8. make sure requirements are met by SmartSense package and not included in chef recipe.
 9. rspec --color complains about hst remote file if missing if it's pointing to file cache vs. hard path to /tmp/smartsense-hst

@@ -1,0 +1,56 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+[security]
+; supported digest commands are md2,md5,mdc2,rmd160,sha,sha1,sha224,sha256,sha384,sha512
+openssl.digest.algorithms=sha256,sha384,sha512,sha,sha1,md5
+gateway.home.dir = /var/lib/smartsense/hst-gateway
+; one way ssl enabled for registration
+gateway.registration.port=9450
+; two ssl enabled for accessing gateway api
+gateway.port=<%= node['smartsense-chef']['gateway_port'] %>
+
+[java]
+home=
+
+[gateway]
+; Warning: The following details should be changed only if directed by documentation or Hortonworks Support
+; Transfer protocol for SmartSense environment
+smartsense.upload.provider.type=SFTP
+; Hosted SmartSense environment SFTP username
+smartsense.sftp.username=<%= node['smartsense-chef']['gateway_sftp_username'] %>
+; Hosted SmartSense environment SFTP password
+smartsense.sftp.password=<%= node['smartsense-chef']['gateway_sftp_password'] %>
+; Hosted SmartSense environment SFTP host
+smartsense.sftp.server.host=<%= node['smartsense-chef']['gateway_sftp_host'] %>
+; Hosted SmartSense environment SFTP port
+smartsense.sftp.server.port=<%= node['smartsense-chef']['gateway_sftp_port'] %>
+; remote landing directory for bundle upload. Please do not change this
+smartsense.sftp.remotedir=landing/
+; timeout for sftp session (milliseconds)
+; default is 10 seconds or 10000 milliseconds
+smartsense.sftp.timeout=10000
+; buffer size in bytes used for following transfers
+; hst-server to gateway
+; gateway to SmartSense
+data.transfer.buffer.size=4096
+; thread pool size for the gateway server's API endpoint
+; if not provided then server automatically calculates based on cpu cores
+;thread.pool.size=20
+
+[ulimit]
+; linux open-file limit
+open.files=10000
