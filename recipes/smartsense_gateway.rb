@@ -22,7 +22,7 @@ execute 'hst gateway start' do
   command 'hst gateway start'
 end
 
-execute 'hst start' do
+execute 'hst restart' do
 #  only_if 'template "#{config_dir}/hst-server.ini"'
   command 'hst restart'
 end
