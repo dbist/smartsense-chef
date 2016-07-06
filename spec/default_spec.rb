@@ -60,7 +60,15 @@ describe 'smartsense-chef::smartsense_setup' do
 #   expect(chef_run).to install_dpkg_package('smartsense-hst')
 # end
 
- it 'smartsense-hst pakage installed' do
-   expect(chef_run).to install_dpkg_package('smartsense-hst')
- end
+  it 'smartsense-hst pakage installed' do
+    expect(chef_run).to install_dpkg_package('smartsense-hst')
+  end
+end
+
+describe 'smartsense-chef::smartsense_gateway' do
+  let(:chef_run) { ChefSpec::SoloRunner.converge(described_recipe) }
+
+  it 'hst-gateway.ini file exists' do
+    expect(chef_run).to create_template('/etc/hst/conf/hst-gateway.ini')
+  end
 end
