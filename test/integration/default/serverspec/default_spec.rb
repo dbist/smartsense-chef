@@ -50,15 +50,32 @@ describe 'smartsense-chef::default' do
  end
 
  # gateway specific tests will only pass if gateway is converged
- describe file('/etc/hst/conf/hst-gateway.ini') do
+# describe file('/etc/hst/conf/hst-gateway.ini') do
+#   it { should exist }
+# end
+
+# it 'hst gateway responds on port 9451' do
+#   expect(port 9451).to be_listening 'tcp'
+# end
+
+# describe command('hst gateway start') do
+#  its(:exit_status) { should eq 0 }
+# end
+
+ # agent specific tests
+ describe file('/etc/hst/conf/hst-agent.ini') do
    it { should exist }
  end
 
- it 'hst gateway responds on port 9451' do
-   expect(port 9451).to be_listening 'tcp'
+ it 'hst agent responds on port 9440' do
+   expect(port 9440).to be_listening 'tcp'
  end
 
- describe command('hst gateway start') do
-  its(:exit_status) { should eq 0 }
+ describe command('hst agent-status') do
+   its(:stdout) { should contain('registered') }
+ end
+
+ describe command('hst list-agents') do
+   its(:stdout) { should contain('default-precise64') }
  end
 end
