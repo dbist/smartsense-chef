@@ -1,0 +1,248 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific
+
+[server]
+hostname=<%= node['smartsense-chef']['hst_server'] %>
+url_port=9440
+secured_url_port=9441
+two_way_ssl=true
+; Number of times to retry connection
+connection_retry_count=50
+; Interval between each retries (in seconds)
+connection_retry_interval=5
+
+[java]
+home=<%= node['smartsense-chef']['java_home'] %>
+
+[agent]
+; Temporary directory used by agent to keep local bundles
+; during bundle preparation. Should be different than server tmp dir.
+; Typical value is '/var/lib/smartsense/hst-agent/tmp'. Make sure this
+; directory will always have at least 5G of free space.
+tmp_dir=/var/lib/smartsense/hst-agent/data/tmp
+
+scripts_dir=/var/lib/smartsense/hst-agent/resources/scripts
+levels_dir=/etc/hst/conf
+version=1.2.2.0-460
+;loglevel=CRITICAL | ERROR | WARNING | INFO | DEBUG | NOTSET
+loglevel=INFO
+capture.level=L2
+
+[command]
+maxretries=1
+sleepBetweenRetries=1
+connect_timeout=10
+heartbeat_interval=10
+
+[script]
+; Timeout for commands in the script (default 5 minutes)
+command_timeout=5m
+
+[management]
+;directory to store updates
+updates.dir=/var/lib/smartsense/hst-agent/updates
+
+; flag to enable download and apply patch from server
+; When configurations are changed on server side, should they be automatically applied to all agents?
+patch.auto.apply.enabled=True
+
+[security]
+keysdir=/var/lib/smartsense/hst-agent/keys
+server_crt=ca.crt
+passphrase_env_var_name=HST_PASSPHRASE
+
+; Indicator for enabling or disabling anonymization.
+; Certain data sets such as host names, IP address etc will be
+; anonymized based on anonymization rules. Data can still be encrypted
+; irrespective of anonymization
+anonymization.enabled=True
+
+; Shared key is available at the source as well as at HortonWorks site.
+; Do not change this
+anonymization.shared.key=/var/lib/smartsense/hst-common/anonymization/keys/shared_anonymization.key
+
+
+; Private key is only available at the source and cannot be unmasked outside.
+; Do not change this
+anonymization.private.key=/var/lib/smartsense/hst-common/anonymization/keys/private_anonymization.key
+
+
+; Public key is required for encrypting the file.
+; Do not change this
+encryption.public.key=/var/lib/smartsense/hst-common/encryption/keys/public.key
+
+; Path to the anonymization_rules.json file
+; Do not change this
+anonymization.rules.path=/etc/hst/conf/anonymization_rules.json
+
+; Set of keys or domains that needs to be filtered
+anonymization.filter=rsyslog.com,isc.org,centos.org,redhat.com,Djava.net,akamaitechnologies.com,sonn.com,usc.edu,es.net,apache.org,logger.org,additivity.org,github.com,java.net,hadoop.net,oracle.com,sun.com,slf4j.org,logger.com,google.com,sun.net,host-engine.com,PreHook.org,PostHook.org,0.0.0.0,127.0.0.1
+
+; Markers for anonymization
+anonymization.shared.marker=¶
+anonymization.private.marker=‡
+
+[bundle]
+; Filters the log to capture
+logs_to_capture=(.*).log$|(.*).log.1$|(.*).out$
+; Set to true to activate logs compression, false to include log files as they are. Default is true.
+compress_captured_log_locally=false
+
+[upload]
+; Number of times to retry upload
+retry_count=50
+; Interval between each retries (in seconds).  Random value between min_retry_interval and
+; max_retry_interval will be used.  For constant value, use retry_interval=x.
+min_retry_interval=15
+max_retry_interval=120
+
+[cluster]
+; Cluster name
+name=
+; Flag to indicate that the HDP cluster is secured or not
+secured=false
+
+[services]
+pidLookupPath=/var/run/
+
+[hadoop]
+home_dir=/usr/lib/hadoop
+conf_dir=/etc/hadoop/conf
+log_dir=/var/log/hadoop
+
+[hive]
+conf_dir=/etc/hive/conf
+conf_server_dir=/etc/hive/conf.server
+log_dir=/var/log/hive
+user=hive
+
+[hbase]
+user=hbase
+conf_dir=/etc/hbase/conf
+log_dir=/var/log/hbase
+regionservers_file=/etc/hbase/conf/regionservers
+
+[oozie]
+conf_dir=/etc/oozie/conf
+log_dir=/var/log/oozie
+pid_dir=/var/run/oozie
+
+[hdfs]
+user=hdfs
+conf_dir=/etc/hadoop/conf
+
+[mapred]
+user=mapred
+log_dir=/var/log/hadoop-mapreduce
+
+[yarn]
+user=yarn
+log_dir=/var/log/hadoop-yarn
+conf_dir=/etc/hadoop/conf
+
+[hcatalog]
+conf_dir=/etc/hcatalog/conf
+user=hcat
+
+[webhcat]
+log_dir=/var/log/webhcat
+
+[sqoop]
+conf_dir=/etc/sqoop/conf
+
+[sqoop2]
+conf_dir=/etc/sqoop2/conf
+
+[tez]
+conf_dir=/etc/tez/conf
+log_dir=/var/log/tez
+
+[ganglia]
+protocol=http
+port=80
+user=
+password=
+conf_dir=/etc/ganglia
+log_dir=/var/log/httpd
+
+[nagios]
+conf_dir=/etc/nagios
+conf_file=/etc/nagios/nagios.cfg
+log_dir=/var/log/nagios
+
+[pig]
+conf_dir=/etc/pig/conf
+
+[zk]
+conf_dir=/etc/zookeeper/conf
+log_dir=/var/log/zookeeper
+
+[kafka]
+conf_dir=/etc/kafka/conf
+log_dir=/var/log/kafka
+
+[falcon]
+conf_dir=/etc/falcon/conf
+log_dir=/var/log/falcon
+
+[ambari_server]
+conf_dir=/etc/ambari-server/conf
+pid_dir=/var/run/ambari-server
+psql_datadir=/var/lib/pgsql/data
+log_dir=/var/log/ambari-server
+
+[ambari_agent]
+conf_dir=/etc/ambari-agent/conf
+pid_dir=/var/run/ambari-agent
+log_dir=/var/log/ambari-agent
+
+[ams_collector]
+conf_dir=/etc/ams-hbase/conf,/etc/ambari-metrics-collector/conf
+pid_dir=/var/run/ambari-metrics-collector
+log_dir=/var/log/ambari-metrics-collector
+
+[ams_monitor]
+conf_dir=/etc/ambari-metrics-monitor/conf
+log_dir=/var/log/ambari-metrics-monitor
+
+[knox]
+conf_dir=/etc/knox/conf
+log_dir=/var/log/knox
+
+[storm]
+conf_dir=/etc/storm/conf
+log_dir=/var/log/storm
+pid_dir=/var/run/storm
+
+[ranger]
+conf_dir=/etc/ranger
+log_dir=/var/log/ranger
+
+[spark]
+conf_dir=/etc/spark/conf
+log_dir=/var/log/spark
+user=spark
+
+[hst]
+log_dir=/var/log/hst
+conf_dir=/etc/hst/conf/
+
+[mr]
+conf_dir=/etc/hadoop/conf
+
+[flume]
+conf_dir=/etc/flume/conf
+
+[hdp]
+install_dir=/usr/hdp/current
