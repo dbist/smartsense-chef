@@ -12,6 +12,9 @@ TODO
 13. BUG: hst status should return non-zero if status is off
 14. serverspec test should check whether hst process is running (notify smartsense bash action, smartsense is not running then do nothing)
 15. removing depends 'java' breaks after making changes
+16. to be compatible with Chef 11, removing the following from metadata.rb
+	FC064: Ensure issues_url is set in metadata: ./metadata.rb:1
+	FC065: Ensure source_url is set in metadata: ./metadata.rb:1
 
 Requirements
 ============
