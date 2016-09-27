@@ -9,10 +9,10 @@ default['smartsense-chef']['cluster_name'] = 'samplecluster'
 default['smartsense-chef']['secured'] = 'n'
 default['smartsense-chef']['deploy_to'] = '/etc/hst/conf/'
 default['smartsense-chef']['smartsense_version'] = '1.2.2-0_amd64'
-default['smartsense-chef']['use_local_repo'] = 'false'
+default['smartsense-chef']['use_local_repo'] = false
 
 # gateway specific properties
-default['smartsense-chef']['gateway_enabled'] = 'true'
+default['smartsense-chef']['gateway_enabled'] = true
 default['smartsense-chef']['gateway_host'] = 'default-precise64'
 default['smartsense-chef']['gateway_port'] = '9451'
 default['smartsense-chef']['gateway_sftp_username'] = 'changeme'
@@ -36,4 +36,4 @@ default['java']['oracle']['accept_oracle_download_terms'] = true
 default['java']['set_default'] = true
 
 # APT repository attributes
-default['apt']['compile_time_update'] = 'true'
+default['apt']['compile_time_update'] = true
