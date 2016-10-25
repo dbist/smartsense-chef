@@ -16,8 +16,3 @@ template "#{config_dir}hst-server.ini" do
   mode '0644'
   subscribes :run, 'dpkg_package "#{Chef::Config[:file_cache_path]}/smartsense-hst_1.2.2-0_amd64.deb"'
 end
-
-execute 'hst start' do
-  # only_if 'template "#{config_dir}/hst-server.ini"'
-  command 'hst start'
-end
