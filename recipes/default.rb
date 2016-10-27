@@ -4,8 +4,7 @@
 #
 # Copyright (c) 2016 Artem Ervits, All Rights Reserved.
 
-# include_recipe "apt"
-include_recipe 'java'
+include_recipe 'smartsense-chef::setattr'
 
 config_dir = node['smartsense-chef']['deploy_to']
 
@@ -54,7 +53,7 @@ end
 include_recipe 'smartsense-chef::smartsense_setup'
 
 # uncomment if you want to deploy smartsense server
-# include_recipe 'smartsense-chef::smartsense_server'
+include_recipe 'smartsense-chef::smartsense_server'
 
 # uncomment if you want to deploy smartsense gateway
 # include_recipe "smartsense-chef::smartsense_gateway"
