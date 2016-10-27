@@ -76,6 +76,6 @@ describe 'smartsense-chef::default' do
  end
 
  describe command('hst list-agents') do
-   its(:stdout) { should contain('default-precise64') }
+   its(:stdout) { should contain('default-ubuntu-1404') }
  end
 end

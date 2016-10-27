@@ -14,13 +14,27 @@ provisioner:
 
 # network is only necessary if accessing SmartSense via UI
 platforms:
-  - name: precise64
+  - name: ubuntu-14.04
     run_list:
-       - recipe[java::oracle]
-       - recipe[smartsense-chef::default]
+       - 'recipe[apt::default]'
+       - 'recipe[java::oracle]'
+       - 'recipe[smartsense-chef::default]'
+    attributes: {
+      java: {
+        oracle: {
+          accept_oracle_download_terms: true,
+          jce: { 
+            enabled: true 
+          }
+        },
+        jdk_version: 8,
+        install_flavor: oracle,
+        accept_license_agreement: true,
+        set_default: true
+      }
+    }
     driver:
-      box: precise64
-      box_url: precise-server-cloudimg-amd64-vagrant-disk1.box
+      box: bento/ubuntu-14.04
       network:
       - [ "private_network" , { ip : "192.168.33.7" } ]	
 

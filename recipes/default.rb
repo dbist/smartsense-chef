@@ -32,7 +32,7 @@ dpkg_package "#{Chef::Config[:file_cache_path]}/smartsense-hst_1.2.2-0_amd64.deb
 end
 
 apt_repository 'ambari' do
-  uri 'http://public-repo-1.hortonworks.com/ambari/ubuntu12/2.x/updates/2.2.2.0'
+  uri 'http://public-repo-1.hortonworks.com/ambari/ubuntu14/2.x/updates/2.2.2.0'
   components ['main']
   distribution 'Ambari'
   action :add
