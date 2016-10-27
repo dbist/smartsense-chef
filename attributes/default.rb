@@ -29,3 +29,6 @@ default['smartsense-chef']['repo_url'] = 'http://public-repo-1.hortonworks.com/a
 
 # APT repository attributes
 default['apt']['compile_time_update'] = true
+
+# Ambari repo
+default['smartsense-chef']['ambari_repo'] = 'http://public-repo-1.hortonworks.com/ambari/ubuntu14/2.x/updates/2.2.2.0'
