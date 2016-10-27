@@ -9,7 +9,7 @@ include_recipe 'smartsense-chef::setattr'
 config_dir = node['smartsense-chef']['deploy_to']
 
 filename = "#{Chef::Config[:file_cache_path]}/smartsense-hst_#{node['smartsense-chef']['smartsense_version']}.deb"
-package_src = "#{node['smartsense-chef']['repo_url']}/smartsense-hst_#{node['smartsense-chef']['smartsense_version']}.deb"
+package_src = "#{node['smartsense-chef']['ambari_repo']}/pool/main/s/smartsense-hst/smartsense-hst_#{node['smartsense-chef']['smartsense_version']}.deb"
 
 # SmartSense results are more accurate with the following dependencies installed
 %w(wget sysstat dstat lsof net-tools python2.7).each do |pkg|
